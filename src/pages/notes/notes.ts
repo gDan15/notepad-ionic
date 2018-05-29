@@ -26,18 +26,18 @@ export class NotesPage {
     public navParams: NavParams,
     private noteService : NoteService) {
   }
-  // ngOnInit() {
-  //     this.getNotes();
-  // }
-  //
-  // getNotes() : void{
-  //   this.noteService.getNotes().subscribe(notes => this.notes = notes);
-  // }
-  //
-  // onSelect(note: Note): void {
-  //   this.selectedNote = note;
-  // }
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad NotesPage');
-  // }
+  ngOnInit() {
+      this.getNotes();
+  }
+
+  getNotes() : void{
+    this.noteService.getNotes().subscribe(notes => this.notes = notes);
+  }
+
+  onSelect(note: Note): void {
+    this.selectedNote = note;
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NotesPage');
+  }
 }

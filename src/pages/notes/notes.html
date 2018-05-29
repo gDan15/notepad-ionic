@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>notes</ion-title>
   </ion-navbar>
 
@@ -15,13 +18,13 @@
 
 <ion-content padding>
   <h2>My notes</h2>
-  <!-- <ul class="notes">
+  <ul class="notes">
     <li *ngFor="let note of notes">
-      <a routerLink="/detail/{{note.id}}">
-        <span class="badge">{{note.id}}</span> {{note.title}}
-      </a>
+        <a routerLink="/detail/{{note.id}}">
+          <span class="badge">{{note.id}}</span> {{note.title}}
+        </a>
     </li>
 
-  </ul> -->
-  gelllo
+  </ul>
+
 </ion-content>

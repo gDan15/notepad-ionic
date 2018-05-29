@@ -19,15 +19,15 @@ export class NoteService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  // // GET : get all notes
-  // getNotes(): Observable<Note[]> {
-  //   this.messageService.add('NoteService: fetched notes');
-  //   return this.http.get<Note[]>(this.getNotesUrl)
-  //   // .pipe
-  //   // (
-  //   //   catchError(this.handleError('getNotes', []))
-  //   // );
-  // }
+  // GET : get all notes
+  getNotes(): Observable<Note[]> {
+    this.messageService.add('NoteService: fetched notes');
+    return this.http.get<Note[]>(this.getNotesUrl);
+    // .pipe
+    // (
+    //   catchError(this.handleError('getNotes', []))
+    // );
+  }
   // GET : get one note
   getNote(id: number): Observable<Note> {
     // TODO: send the message _after_ fetching the hero

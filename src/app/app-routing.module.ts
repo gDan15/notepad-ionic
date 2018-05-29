@@ -8,10 +8,10 @@ import { NoteDetailComponent }  from '../components/note-detail/note-detail';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  // { path: 'detail/:id', component: NoteDetailComponent },
+  { path: 'detail/:id', component: NoteDetailComponent },
   // { path: 'dashboard', component: DashboardComponent },
   // { path: 'addNote', component: NoteAddComponent },
-  // { path: 'notes', component: NotesPage }
+  { path: 'notes', component : NotesPage }
 ];
 
 @NgModule({
