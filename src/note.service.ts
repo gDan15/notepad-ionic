@@ -30,7 +30,6 @@ export class NoteService {
   }
   // GET : get one note
   getNote(id: number): Observable<Note> {
-    // TODO: send the message _after_ fetching the hero
     const getOneNoteUrl = `${this.getNotesUrl}/${id}`;
     // this.messageService.add(`NoteService: fetched note id=${id}`);
     return this.http.get<Note>(getOneNoteUrl);

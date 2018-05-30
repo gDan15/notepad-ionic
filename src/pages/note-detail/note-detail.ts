@@ -5,32 +5,38 @@ import { Location } from '@angular/common';
 import { NoteService }  from '../../note.service';
 import { Note } from '../../note';
 
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
- * Generated class for the NoteDetailComponent component.
+ * Generated class for the NoteDetailPage page.
  *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
+
+@IonicPage(
+  {
+    name:'detail',
+    segment: 'detail/:id'
+  }
+)
 @Component({
-  selector: 'note-detail',
-  templateUrl: 'note-detail.html'
+  selector: 'page-note-detail',
+  templateUrl: 'note-detail.html',
 })
-export class NoteDetailComponent {
+export class NoteDetailPage {
   @Input() note: Note;
-  text: string;
-  constructor(
+  constructor(public navCtrl: NavController, public navParams: NavParams,
     private route: ActivatedRoute,
     private noteService: NoteService,
     private location: Location
   ) {
-    console.log('Hello NoteDetailComponent Component');
-    this.text = 'Hello World';
   }
   ngOnInit() : void {
     this.getNote();
   }
   getNote(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.navParams.get('id');
     this.noteService.getNote(id).subscribe(note => this.note = note);;
   }
   goBack(): void {
@@ -40,6 +46,8 @@ export class NoteDetailComponent {
     this.noteService.updateNote(this.note)
      .subscribe(() => this.goBack());
   }
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NoteDetailPage');
+  }
 
 }

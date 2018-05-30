@@ -15,16 +15,15 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <h2>My notes</h2>
   <ul class="notes">
     <li *ngFor="let note of notes">
-        <a routerLink="/detail/{{note.id}}">
+        <a (click)="goToOtherPage(note)">
           <span class="badge">{{note.id}}</span> {{note.title}}
         </a>
     </li>
 
   </ul>
-
+<!-- <note-detail [note]="selectedNote"></note-detail> -->
 </ion-content>

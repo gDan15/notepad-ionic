@@ -33,9 +33,14 @@ export class NotesPage {
   getNotes() : void{
     this.noteService.getNotes().subscribe(notes => this.notes = notes);
   }
-
   onSelect(note: Note): void {
     this.selectedNote = note;
+  }
+  goToOtherPage(note: Note) {
+    //push another page onto the history stack
+    //causing the nav controller to animate the new page in
+    // this.selectedNote = note;
+    this.navCtrl.push('detail',{'id': note.id});
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotesPage');
