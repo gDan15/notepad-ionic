@@ -16,6 +16,9 @@ import { NotesPage } from '../pages/notes/notes';
 import { NoteService } from '../note.service';
 import { MessageService } from '../message.service';
 import { NoteDetailComponent } from '../components/note-detail/note-detail';
+import { NoteAddPage } from '../pages/note-add/note-add';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +28,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     NotesPage,
+    NoteAddPage,
     NoteDetailComponent,
+    DashboardPage,
     ListPage
   ],
   imports: [
@@ -40,6 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     NotesPage,
+    NoteAddPage,
+    DashboardPage,
     NoteDetailComponent,
     ListPage
   ],

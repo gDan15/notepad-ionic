@@ -36,7 +36,7 @@ export class NotesPage {
   onSelect(note: Note): void {
     this.selectedNote = note;
   }
-  goToOtherPage(note: Note) {
+  goToDetail(note: Note) {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
     // this.selectedNote = note;

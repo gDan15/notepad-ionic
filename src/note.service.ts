@@ -42,6 +42,7 @@ export class NoteService {
   // PUT : update note informations
   // TODO : error 405 while trying to update, doesn't work at all.
   updateNote(note: Note): Observable<any> {
+
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

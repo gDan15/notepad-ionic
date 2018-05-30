@@ -1,0 +1,28 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3>Top Notes</h3>
+  <div class="grid grid-pad">
+    <a *ngFor="let note of notes" class="col-1-4">
+      <a (click)="goToDetail(note)">
+        <div class="module note">
+          <h4>{{note.title}}</h4>
+        </div>
+      </a>
+    </a>
+  </div>
+</ion-content>

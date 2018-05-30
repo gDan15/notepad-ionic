@@ -42,10 +42,10 @@ export class NoteDetailPage {
   goBack(): void {
     this.location.back();
   }
-  save(): void {
-    this.noteService.updateNote(this.note)
-     .subscribe(() => this.goBack());
-  }
+  // save(): void {
+  //   this.noteService.updateNote(this.note);
+  //    // .subscribe(() => this.goBack());
+  // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NoteDetailPage');
   }

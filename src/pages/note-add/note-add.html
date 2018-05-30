@@ -1,0 +1,38 @@
+<!--
+  Generated template for the NoteAddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>note-add</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <label>Title:
+      <input #title />
+    </label>
+    <label>Content:
+      <input #content />
+    </label>
+    <label>Date:
+      <input #date />
+    </label>
+    <label>Category:
+      <input #category />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="addNote(title.value, content.value, date.value, category.value); title.value=''">
+      submit
+    </button>
+  </div>
+
+</ion-content>
