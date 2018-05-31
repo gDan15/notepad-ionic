@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
 import { Note } from './note';
@@ -49,20 +49,23 @@ export class NoteService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     const noteUrlPut = `${this.notesUrl}/put/${note.id}`;
-    return this.http.put(noteUrlPut, note, httpOptions);
-    // .pipe
-    // (
-    //   tap(_ => this.log(`updated note id=${note.id}`)),
-    //   catchError(this.handleError<any>('updateNote'))
-    // );
+    console.log(note);
+    console.log(noteUrlPut);
+    return this.http.put(noteUrlPut, note, httpOptions)
+    .pipe
+    (
+      tap(_ => this.log(`updated note id=${note.id}`))
+      // catchError(this.handleError<any>('updateNote'))
+    );
   }
   // POST : add a note
   addNote(note: Note): Observable<Note> {
+    console.log(note);
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+      headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
     };
     const noteUrlPost = `${this.notesUrl}/post`;
-    return this.http.post<Note>(noteUrlPost, note, httpOptions);
+    return this.http.post(noteUrlPost, note, httpOptions);
     // .pipe(
     //   tap((note: Note) => this.log(`added note w/ id=${note.id}`)),
     //   catchError(this.handleError<Note>('addNote'))
@@ -88,7 +91,7 @@ export class NoteService {
   //     return of(result as T);
   //   };
   // }
-  // private log(message: string) {
-  //   this.messageService.add('NoteService: ' + message);
-  // }
+  private log(message: string) {
+    this.messageService.add('NoteService: ' + message);
+  }
 }

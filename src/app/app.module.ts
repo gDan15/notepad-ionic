@@ -20,7 +20,10 @@ import { NoteAddPage } from '../pages/note-add/note-add';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { CategoriesPage } from '../pages/categories/categories';
 import { CategoryDetailPage } from '../pages/category-detail/category-detail';
+import { CategoryAddPage } from '../pages/category-add/category-add';
 import { CategoryService } from '../category.service';
+
+CategoryService
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     NotesPage,
     NoteAddPage,
+    CategoryAddPage,
     NoteDetailComponent,
     CategoriesPage,
     DashboardPage,
@@ -49,6 +53,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     NotesPage,
     NoteAddPage,
+    CategoryAddPage,
     CategoriesPage,
     DashboardPage,
     NoteDetailComponent,

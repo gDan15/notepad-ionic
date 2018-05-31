@@ -34,7 +34,9 @@ export class NoteAddPage {
   getNotes() : void{
     this.noteService.getNotes().subscribe(notes => this.notes = notes);
   }
+  //TODO : have to add category and reformate date in order to work
   addNote(title:string, content:string, date:string, category:string):void{
+
     this.note = new Note(title,content,date,category);
     console.log('My note is called ' + this.note.title);
     this.noteService.addNote(this.note)

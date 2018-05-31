@@ -39,13 +39,11 @@ export class NoteDetailPage {
     const id = this.navParams.get('id');
     this.noteService.getNote(id).subscribe(note => this.note = note);;
   }
-  goBack(): void {
-    this.location.back();
+
+  save(note : Note): void {
+    this.noteService.updateNote(this.note);
+     // .subscribe(() => this.goBack());
   }
-  // save(): void {
-  //   this.noteService.updateNote(this.note);
-  //    // .subscribe(() => this.goBack());
-  // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NoteDetailPage');
   }

@@ -37,7 +37,7 @@
     </ion-item>
   </ion-list>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="addNote(title.value, content.value, date.value, category.value); title.value=''">
-    submit
+  <button ion-button round (click)="addNote(title.value, content.value, date.value, category.value); title.value=''">
+    Save
   </button>
 </ion-content>

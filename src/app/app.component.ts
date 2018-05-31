@@ -9,6 +9,7 @@ import { NotesPage } from '../pages/notes/notes';
 import { NoteAddPage } from '../pages/note-add/note-add';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { CategoriesPage } from '../pages/categories/categories';
+import { CategoryAddPage } from '../pages/category-add/category-add';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class MyApp {
       { title: 'Dashboard', component: DashboardPage },
       { title: 'Notes', component: NotesPage },
       { title : 'Categories', component: CategoriesPage},
+      { title : 'Add a category', component: CategoryAddPage},
       { title: 'Add a note', component: NoteAddPage }
     ];
 
