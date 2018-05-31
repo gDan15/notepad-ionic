@@ -16,11 +16,16 @@
 <ion-content padding>
   <div *ngIf="category">
     <h2>{{category.wording}} Details</h2>
-    <div><span>Id: </span>{{category.id}}</div>
-    <div>
-      <label>Title:
-        <input [(ngModel)]="category.title" placeholder="title">
-      </label>
-    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Id</ion-label>
+        <ion-input [(ngModel)]="category.id" [disabled]="!isModificationEnabled"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Title</ion-label>
+        <ion-input [(ngModel)]="category.title"></ion-input>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

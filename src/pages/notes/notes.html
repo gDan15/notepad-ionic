@@ -19,8 +19,8 @@
   <h2>My notes</h2>
   <ul class="notes">
     <li *ngFor="let note of notes">
-        <a (click)="goToDetail(note)">
-          <span class="badge">{{note.title}}</span> 
+        <a ion-item (click)="goToDetail(note)">
+          <span class="badge">{{note.title}}</span>
         </a>
     </li>
 

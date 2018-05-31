@@ -20,8 +20,8 @@
   <h2>My categories</h2>
   <ul class="categories">
     <li *ngFor="let category of categories">
-        <a (click)="goToDetail(category)">
-          <span class="badge">{{category.wording}}</span> 
+        <a ion-item (click)="goToDetail(category)">
+          <span class="badge">{{category.wording}}</span>
         </a>
     </li>
 

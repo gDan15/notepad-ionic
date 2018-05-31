@@ -16,23 +16,28 @@
 
 
 <ion-content padding>
-  <div>
-    <label>Title:
-      <input #title />
-    </label>
-    <label>Content:
-      <input #content />
-    </label>
-    <label>Date:
-      <input #date />
-    </label>
-    <label>Category:
-      <input #category />
-    </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="addNote(title.value, content.value, date.value, category.value); title.value=''">
-      submit
-    </button>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Title</ion-label>
+      <ion-input #title></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label color="primary">Date</ion-label>
+      <ion-datetime placeholder="Press on field" displayFormat="DD/MM/YYYY" #date></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Category</ion-label>
+      <ion-input #category></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label color="primary">Content</ion-label> -->
+      <ion-textarea placeholder="content" #content></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="addNote(title.value, content.value, date.value, category.value); title.value=''">
+    submit
+  </button>
 </ion-content>
