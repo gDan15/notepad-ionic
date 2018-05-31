@@ -17,6 +17,8 @@ export class NoteService {
   private notesUrl = "http://localhost:8000/note/api";
 
 
+
+
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   // GET : get all notes
@@ -59,13 +61,14 @@ export class NoteService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
     };
-    const noteUrlPut = `${this.notesUrl}/post`;
-    return this.http.post<Note>(noteUrlPut, note, httpOptions);
+    const noteUrlPost = `${this.notesUrl}/post`;
+    return this.http.post<Note>(noteUrlPost, note, httpOptions);
     // .pipe(
     //   tap((note: Note) => this.log(`added note w/ id=${note.id}`)),
     //   catchError(this.handleError<Note>('addNote'))
     // );
   }
+
   /**
  * Handle Http operation that failed.
  * Let the app continue.

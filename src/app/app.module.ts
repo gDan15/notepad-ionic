@@ -18,7 +18,9 @@ import { MessageService } from '../message.service';
 import { NoteDetailComponent } from '../components/note-detail/note-detail';
 import { NoteAddPage } from '../pages/note-add/note-add';
 import { DashboardPage } from '../pages/dashboard/dashboard';
-
+import { CategoriesPage } from '../pages/categories/categories';
+import { CategoryDetailPage } from '../pages/category-detail/category-detail';
+import { CategoryService } from '../category.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NotesPage,
     NoteAddPage,
     NoteDetailComponent,
+    CategoriesPage,
     DashboardPage,
     ListPage
   ],
@@ -46,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     NotesPage,
     NoteAddPage,
+    CategoriesPage,
     DashboardPage,
     NoteDetailComponent,
     ListPage
@@ -54,6 +58,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     NoteService,
+    CategoryService,
     MessageService,
     // RouterModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -19,21 +19,33 @@
 <ion-content padding>
   <div *ngIf="note">
     <h2>{{note.title | uppercase}} Details</h2>
-    <div><span>Id: </span>{{note.id}}</div>
-    <div>
-      <label>Title:
-        <input [(ngModel)]="note.title" placeholder="title">
-      </label>
-      <label>Content:
-        <input [(ngModel)]="note.content" placeholder="content">
-      </label>
-      <label>Date:
-        <input [(ngModel)]="note.date" placeholder="date">
-      </label>
-      <label>Category:
-        <input [(ngModel)]="note.category" placeholder="category">
-      </label>
-    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Id</ion-label>
+        <ion-input placeholder="Id" [(ngModel)]="note.id" [disabled]="!isModificationEnabled"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Title</ion-label>
+        <ion-input placeholder="Titre" [(ngModel)]="note.title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Date</ion-label>
+        <ion-input placeholder="Date" [(ngModel)]="note.date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Category</ion-label>
+        <ion-input placeholder="Category" [(ngModel)]="note.category.wording"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label color="primary">Content</ion-label> -->
+        <ion-textarea placeholder="Content" [(ngModel)]="note.content"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
   </div>
   <!-- <button (click)="goBack()">go back</button> -->
   <!-- <button (click)="save()">save</button> -->
