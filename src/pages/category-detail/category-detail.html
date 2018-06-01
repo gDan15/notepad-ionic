@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>category-detail</ion-title>
+    <ion-title>Category details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,14 +19,14 @@
     <ion-list>
       <ion-item>
         <ion-label color="primary">Id</ion-label>
-        <ion-input [(ngModel)]="category.id" [disabled]="!isModificationEnabled"></ion-input>
+        <ion-input text-right [(ngModel)]="category.id" [disabled]="!isModificationEnabled"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="primary">Title</ion-label>
-        <ion-input [(ngModel)]="category.title"></ion-input>
+        <ion-input text-right [(ngModel)]="category.wording"></ion-input>
       </ion-item>
     </ion-list>
   </div>
-  <button ion-button round>Round Button</button>
+  <button ion-button round>Save</button>
 </ion-content>

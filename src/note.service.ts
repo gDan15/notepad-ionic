@@ -65,7 +65,7 @@ export class NoteService {
       headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
     };
     const noteUrlPost = `${this.notesUrl}/post`;
-    return this.http.post(noteUrlPost, note, httpOptions);
+    return this.http.post<Note>(noteUrlPost, note, httpOptions);
     // .pipe(
     //   tap((note: Note) => this.log(`added note w/ id=${note.id}`)),
     //   catchError(this.handleError<Note>('addNote'))

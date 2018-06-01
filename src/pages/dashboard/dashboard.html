@@ -16,13 +16,7 @@
 
 <ion-content padding>
   <h3>Top Notes</h3>
-  <div class="grid grid-pad">
     <a *ngFor="let note of notes" class="col-1-4">
-      <a (click)="goToDetail(note)">
-        <div class="module note">
-          <h4>{{note.title}}</h4>
-        </div>
-      </a>
+        <button ion-button full (click)="goToDetail(note)">{{note.title}}</button>
     </a>
-  </div>
 </ion-content>
